@@ -5,12 +5,14 @@ class MyTextfield extends StatelessWidget {
   final String hintText;
   final bool? obscureText;
   final TextEditingController controller;
+  final FocusNode? focusNode;
 
   const MyTextfield({
     super.key,
     required this.hintText,
     this.obscureText = false,
     required this.controller,
+    this.focusNode,
   });
 
   @override
@@ -22,6 +24,7 @@ class MyTextfield extends StatelessWidget {
       child: TextField(
         obscureText: obscureText ?? false,
         controller: controller,
+        focusNode: focusNode,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: colorScheme.tertiary),
