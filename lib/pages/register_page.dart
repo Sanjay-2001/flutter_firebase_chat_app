@@ -3,7 +3,8 @@ import 'package:firebase_chat_app/components/components.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  final void Function() onTap;
+  const RegisterPage({super.key, required this.onTap});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -56,11 +57,14 @@ class _RegisterPageState extends State<RegisterPage> {
                   'Already have an account? ',
                   style: TextStyle(color: colorScheme.primary),
                 ),
-                Text(
-                  'Login now',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: colorScheme.primary,
+                GestureDetector(
+                  onTap: widget.onTap,
+                  child: Text(
+                    'Login now',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: colorScheme.primary,
+                    ),
                   ),
                 ),
               ],

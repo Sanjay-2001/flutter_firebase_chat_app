@@ -3,7 +3,8 @@ import 'package:firebase_chat_app/components/components.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final void Function() onTap;
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -48,11 +49,14 @@ class _LoginPageState extends State<LoginPage> {
                   'Not a member? ',
                   style: TextStyle(color: colorScheme.primary),
                 ),
-                Text(
-                  'Register now',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: colorScheme.primary,
+                GestureDetector(
+                  onTap: widget.onTap,
+                  child: Text(
+                    'Register now',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: colorScheme.primary,
+                    ),
                   ),
                 ),
               ],
