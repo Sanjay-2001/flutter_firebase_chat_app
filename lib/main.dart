@@ -19,7 +19,7 @@ class MainApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: LoginPage(),
+          home: RegisterPage(),
           theme: lightMode,
         );
       },
