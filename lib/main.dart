@@ -1,6 +1,6 @@
-import 'package:firebase_chat_app/pages/login_page.dart';
-import 'package:firebase_chat_app/themes/light_mode.dart';
+import 'package:firebase_chat_app/pages/pages.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_chat_app/themes/light_mode.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {

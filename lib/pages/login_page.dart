@@ -1,5 +1,5 @@
-import 'package:firebase_chat_app/components/my_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_chat_app/components/components.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,6 +12,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  void login() {}
+
   @override
   Widget build(BuildContext context) {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
@@ -34,6 +37,25 @@ class _LoginPageState extends State<LoginPage> {
               hintText: 'Password',
               controller: _passwordController,
               obscureText: true,
+            ),
+            SizedBox(height: 25.h),
+            MyButton(text: 'Login', onTap: login),
+            SizedBox(height: 25.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Not a member? ',
+                  style: TextStyle(color: colorScheme.primary),
+                ),
+                Text(
+                  'Register now',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: colorScheme.primary,
+                  ),
+                ),
+              ],
             ),
           ],
         ),
