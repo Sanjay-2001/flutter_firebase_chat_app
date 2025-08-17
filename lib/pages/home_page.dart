@@ -1,5 +1,4 @@
 import 'package:firebase_chat_app/components/components.dart';
-import 'package:firebase_chat_app/components/my_drawer.dart';
 import 'package:firebase_chat_app/pages/pages.dart';
 import 'package:firebase_chat_app/services/auth/auth_service.dart';
 import 'package:firebase_chat_app/services/chat/chat_service.dart';
@@ -14,7 +13,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: AppBar(
+        title: const Text('Home'),
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.grey,
+        elevation: 0,
+      ),
       drawer: const MyDrawer(),
       body: _buildUserList(),
     );
@@ -54,7 +59,11 @@ class HomePage extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => ChatPage(receiverEmail: userData['email']),
+              builder:
+                  (context) => ChatPage(
+                    receiverEmail: userData['email'],
+                    receiverID: userData['uid'],
+                  ),
             ),
           );
         },
