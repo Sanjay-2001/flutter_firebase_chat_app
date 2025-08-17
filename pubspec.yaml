@@ -1,6 +1,6 @@
 name: firebase_chat_app
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -17,6 +17,17 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_launcher_icons: "^0.13.1"
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/ChatAppIcon.png
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/ChatAppIcon.png"
+  adaptive_icon_background: "#D9D9D9"
+  adaptive_icon_foreground: "assets/ChatAppIcon.png"
+  min_sdk_android: 21
