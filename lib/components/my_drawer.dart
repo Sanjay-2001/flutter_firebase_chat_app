@@ -1,4 +1,4 @@
-import 'package:firebase_chat_app/auth/auth_service.dart';
+import 'package:firebase_chat_app/services/auth/auth_service.dart';
 import 'package:firebase_chat_app/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,7 +58,9 @@ class MyDrawer extends StatelessWidget {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SettingsPage()),
+                      MaterialPageRoute(
+                        builder: (context) => const SettingsPage(),
+                      ),
                     );
                   },
                 ),
